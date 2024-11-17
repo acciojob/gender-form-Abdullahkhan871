@@ -1,31 +1,11 @@
 import React, { useState } from "react";
 import "./../styles/App.css";
+import Check from "./Check";
+import Check2 from "./Check2";
 // import { createHtmlTagObject } from "html-webpack-plugin";
 
 const App = () => {
   const [cloth, Setcloth] = useState("");
-
-  const maleSlection = (
-    <select id="maleSlection" name="country">
-      <option value="select" selected>
-        Select size
-      </option>
-      <option value="Small">Small</option>
-      <option value="Medium">Medium</option>
-      <option value="Large">Large</option>
-    </select>
-  );
-
-  const femaleSlection = (
-    <select id="femaleSlection" name="country">
-      <option value="select" selected>
-        Select size
-      </option>
-      <option value="Small">2</option>
-      <option value="Medium">4</option>
-      <option value="Large">6</option>
-    </select>
-  );
 
   return (
     <div>
@@ -50,7 +30,7 @@ const App = () => {
       </div>
       <div>
         <h2>Select your {cloth} size:</h2>
-        {cloth == "shirt" ? maleSlection : femaleSlection}
+        {cloth == "shirt" ? <Check /> : <Check2 />}
       </div>
     </div>
   );
